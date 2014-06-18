@@ -1,0 +1,16 @@
+[
+{
+  "modid": "wayfinder",
+  "name": "Wayfinder",
+  "description": "A mod for adding waypoints and navigation to Minecraft.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authors": ["TehStoneMan"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

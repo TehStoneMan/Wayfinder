@@ -1,0 +1,14 @@
+# Eclipse project files
+.classpath
+.settings
+.project
+
+# Uneeded gradle files
+.gradle
+
+# Bin files
+bin
+build
+
+# Gimp files
+*.xcf
