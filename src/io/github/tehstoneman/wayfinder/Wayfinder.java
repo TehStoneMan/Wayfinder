@@ -4,9 +4,9 @@
 
 package io.github.tehstoneman.wayfinder;
 
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 
+import io.github.tehstoneman.wayfinder.data.WaypointManager;
 import io.github.tehstoneman.wayfinder.proxies.CommonProxy;
 import io.github.tehstoneman.wayfinder.utils.WF_ConfigHandler;
 import io.github.tehstoneman.wayfinder.utils.WF_EventHandler;
@@ -30,24 +30,27 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class Wayfinder
 {
 	// Wayfinder mod info
-	public static final String	MOD_ID			= "wayfinder";
-	public static final String	NAME			= "Wayfinder";
-	public static final String	VERSION			= "0.1a";
-	public static final String	CHANNEL			= MOD_ID;
-	public static final String	PROXY_LOCATION	= "io.github.tehstoneman.wayfinder.proxies.";
+	public static final String		MOD_ID			= "wayfinder";
+	public static final String		NAME			= "Wayfinder";
+	public static final String		VERSION			= "0.2";
+	public static final String		CHANNEL			= MOD_ID;
+	public static final String		PROXY_LOCATION	= "io.github.tehstoneman.wayfinder.proxies.";
 
 	// Register an instance of this mod
 	@Instance( value = Wayfinder.MOD_ID )
-	public static Wayfinder		instance;
+	public static Wayfinder			instance;
 
 	// Define proxies
 	@SidedProxy( clientSide = Wayfinder.PROXY_LOCATION + "ClientProxy",
 			serverSide = Wayfinder.PROXY_LOCATION + "CommonProxy" )
-	public static CommonProxy	proxy;
+	public static CommonProxy		proxy;
 
 	// Define custom GUI indices
-	private static int			modGuiIndex		= 0;
-	public static final int		GUI_WAYPOINTS	= modGuiIndex++;
+	private static int				modGuiIndex		= 0;
+	public static final int			GUI_WAYPOINTS	= modGuiIndex++;
+
+	// Global variables
+	public static WaypointManager	wpManager = null;
 
 	// Perform pre initialisation operations
 	@EventHandler
@@ -64,7 +67,9 @@ public class Wayfinder
 	// Perform initialisation operations
 	@EventHandler
 	public void Init( FMLInitializationEvent event )
-	{}
+	{
+		wpManager = new WaypointManager();
+	}
 
 	// Perform post initialisation operations
 	@EventHandler

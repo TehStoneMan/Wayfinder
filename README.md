@@ -1,6 +1,14 @@
 Wayfinder
 =========
 
-Minecraft mod to add waypoints
+A minecraft mod to add extra functions to the compass
 
-Currently only displays a compass HUD when a regular compass is held
+Changelog
+---------
+
+0.2
+    * Added left-click on a block with the compass to create a waypoint
+    * Added ability to render waypoints as a text label with the waypoint co-ordinates
+
+0.1
+    * Initial release
